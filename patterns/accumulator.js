@@ -22,9 +22,24 @@ export function sumToN(n) {
  * @returns `1` if n is 0
  */
 export function factorial(n) {
-  // TODO
-}
 
+  let product = 1; //set base number for the loop
+
+  if (typeof n !== "number") { return NaN} //return NaN if not a number
+ 
+  else if (n < 0){ return undefined}
+
+  else if(n == 0){
+    return (1)
+  }
+  
+  else if (n > 0){
+    for (let i = 1; i <= n; i++) { //create loop (i <= n) because n is a number
+    product *= i; //multiply product by i repeatedly
+  }
+  return product;
+}
+}
 /**
  * @param {number} n
  * @returns {number[]} an array of integers from 1 to n, inclusive
@@ -32,17 +47,35 @@ export function factorial(n) {
  * @returns `[]` if n is 0 or negative
  */
 export function buildNArray(n) {
-  // TODO
+
+  let array = []
+
+  if (typeof n !== "number"){return null}
+
+  else if (n <= 0){return []}
+  else if (n > 0){
+    for (let i = 1; i <= n; i++){
+      array.push(i) //use array.push to add the number to end of array
+    }
+    return array
+  }
 }
 
 /**
  * @param {string[]} strings
  * @returns {string} the longest string in `strings`
  */
-export function getLongestString(strings) {
-  // TODO
-}
+export function findLongestString(strings) {
+  let longest = ""; // start with empty string
 
+  for (let str of strings) {
+    if (str.length > longest.length) {
+      longest = str; // update if current string is longer
+    }
+  }
+
+  return longest;
+}
 /**
  * @param {boolean[]} attendance - `true` means a student is present, `false` means a student is absent
  * @returns {number} the number of students present

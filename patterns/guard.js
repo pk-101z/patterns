@@ -18,9 +18,14 @@ export function multiply(num1, num2) {
  * @returns {string} "Who would you like to vote for?" if `age` is 18 or older
  */
 export function vote(age) {
-  // TODO
+  if (age >= 18){
+    return ("Who would you like to vote for?")
+  } else if (age < 18){
+    return ("You must be 18 or older to vote")
+  } else {
+    return ("Age not valid")
+  }
 }
-
 /**
  * @param {string} str1
  * @param {string} str2
@@ -28,5 +33,9 @@ export function vote(age) {
  * @returns `undefined` if either argument is not a string
  */
 export function concatenateStrings(str1, str2) {
-  // TODO
+  if (typeof str1 !== "string" || typeof str2 !== "string") { //if one of them is not a string it is undefined
+    //typeof to check type (number, string, ect)
+    return (undefined)
+  }
+  return (str1 + str2)
 }
