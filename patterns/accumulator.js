@@ -81,8 +81,9 @@ export function findLongestString(strings) {
  * @returns {number} the number of students present
  */
 export function countPresent(attendance) {
-  // TODO
+  return attendance.filter(Boolean).length;
 }
+
 
 /**
  * In DNA strings, the symbols `A` and `T` are complements of each other,
@@ -95,5 +96,17 @@ export function countPresent(attendance) {
  * @returns `null` if `dna` is not a string
  */
 export function complementDNA(dna) {
-  // TODO
+  if (typeof dna !== "string") return null;
+
+  let complement = "";
+  for (let base of dna) {
+    switch (base) {
+      case "A": complement += "T"; break;
+      case "T": complement += "A"; break;
+      case "C": complement += "G"; break;
+      case "G": complement += "C"; break;
+      default: return null; // invalid character
+    }
+  }
+  return complement;
 }
